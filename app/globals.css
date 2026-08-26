@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --color-forest: #0e1a2b;
+  --color-ivory: #f5f7fa;
+  --color-cream: #e7ecf3;
+  --color-gold: #2f6fed;
+  --color-charcoal: #0b1220;
+  --color-steel: #64748b;
+  --color-silver: #94a3b8;
+  --color-white: #ffffff;
+}
+
+@theme inline {
+  --color-forest: var(--color-forest);
+  --color-ivory: var(--color-ivory);
+  --color-cream: var(--color-cream);
+  --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
+  --color-steel: var(--color-steel);
+  --color-silver: var(--color-silver);
+
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-page {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
