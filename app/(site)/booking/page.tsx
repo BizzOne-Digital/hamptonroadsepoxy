@@ -6,7 +6,7 @@ import BookingForm from "@/components/forms/BookingForm";
 export const metadata: Metadata = {
   title: "Book a Consultation",
   description:
-    "Book a free consultation with Hampton Roads Epoxy for your metallic, quartz, or classic epoxy flooring project in Hampton Roads, Virginia.",
+    "Book a free consultation with Hampton Roads Epoxy for your metallic, quartz, or classic epoxy flooring project in Hampton Roads.",
   alternates: { canonical: "/booking" },
 };
 

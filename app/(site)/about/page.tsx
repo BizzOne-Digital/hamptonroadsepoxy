@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet Hampton Roads Epoxy, an owner-operated epoxy flooring company serving Hampton Roads, Virginia with premium metallic, quartz, and classic epoxy floors.",
+    "Meet Hampton Roads Epoxy, an owner-operated epoxy flooring company serving Hampton Roads with premium metallic, quartz, and classic epoxy floors.",
   alternates: { canonical: "/about" },
 };
 
@@ -39,9 +39,9 @@ export default function AboutPage() {
               Hampton Roads&apos; Trusted Epoxy Flooring Specialists
             </h1>
             <p className="text-ivory/80 text-lg mt-5 max-w-xl leading-relaxed">
-              Founded and personally run by {siteConfig.ownerName}, Hampton
-              Roads Epoxy exists to make concrete floors beautiful, durable,
-              and easy to live with.
+              Owner-operated and hands-on, Hampton Roads Epoxy exists to
+              make concrete floors beautiful, durable, and easy to live
+              with.
             </p>
           </Reveal>
         </div>

@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Project Gallery",
   description:
-    "Browse recent metallic, quartz, and classic epoxy flooring installations by Hampton Roads Epoxy across Hampton Roads, Virginia.",
+    "Browse recent metallic, quartz, and classic epoxy flooring installations by Hampton Roads Epoxy across Hampton Roads.",
   alternates: { canonical: "/gallery" },
 };
 

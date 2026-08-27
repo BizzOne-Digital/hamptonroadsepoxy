@@ -7,7 +7,7 @@ export const siteConfig = {
   emailHref: "mailto:orlandospain@gmail.com",
   domain: "hamptonroadsepoxy.com",
   url: "https://hamptonroadsepoxy.com",
-  serviceArea: "Hampton Roads, Virginia",
+  serviceArea: "Hampton Roads",
   serviceAreaCities: [
     "Virginia Beach",
     "Norfolk",

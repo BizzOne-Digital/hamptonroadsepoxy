@@ -56,7 +56,7 @@ export default function Footer() {
       <div className="border-t border-ivory/10">
         <div className="container-page py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ivory/60">
           <span>&copy; {year} Hampton Roads Epoxy. All rights reserved.</span>
-          <span>Owned &amp; operated by {siteConfig.ownerName}</span>
+          <span>Locally owned &amp; operated</span>
         </div>
       </div>
     </footer>

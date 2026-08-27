@@ -32,7 +32,7 @@ export default function AboutPreview() {
             About Hampton Roads Epoxy
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl text-forest mt-4 leading-tight">
-            Built on Craftsmanship, Backed by {siteConfig.ownerName}
+            Built on Craftsmanship, Backed by Hands-On Ownership
           </h2>
           <p className="text-charcoal/75 text-lg mt-5 leading-relaxed">
             Hampton Roads Epoxy is a locally owned flooring company dedicated

@@ -72,7 +72,7 @@ export function customerConfirmationEmail(opts: { name: string; intro: string })
           <p>Hi ${opts.name},</p>
           <p>${opts.intro}</p>
           <p>We appreciate you reaching out and will be in touch shortly. If you need immediate assistance, call us at <strong>757-718-0117</strong>.</p>
-          <p style="margin-top:24px;">— Orlando Navarrete<br/>Hampton Roads Epoxy</p>
+          <p style="margin-top:24px;">— The Hampton Roads Epoxy Team</p>
         </div>
       </div>
     </div>

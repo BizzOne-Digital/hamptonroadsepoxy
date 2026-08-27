@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Hampton Roads Epoxy",
   },
   description:
-    "Hampton Roads Epoxy installs premium metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads, Virginia. Get a free quote today.",
+    "Hampton Roads Epoxy installs premium metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads. Get a free quote today.",
   keywords: [
     "epoxy flooring Hampton Roads",
     "metallic epoxy flooring Virginia",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hampton Roads Epoxy | Premium Epoxy Flooring",
     description:
-      "Metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads, Virginia.",
+      "Metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads.",
     url: siteConfig.url,
     siteName: "Hampton Roads Epoxy",
     locale: "en_US",

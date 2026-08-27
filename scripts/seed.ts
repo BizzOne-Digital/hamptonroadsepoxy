@@ -36,7 +36,7 @@ async function seed() {
     await SiteSetting.create({
       phone: "757-718-0117",
       email: "orlandospain@gmail.com",
-      address: "Hampton Roads, Virginia",
+      address: "Hampton Roads",
       businessName: "Hampton Roads Epoxy",
       ownerName: "Orlando Navarrete",
       facebookUrl: "",
@@ -131,7 +131,7 @@ async function seed() {
         name: "DEMO — Linda K.",
         location: "Norfolk, VA",
         quote:
-          "[Demo placeholder testimonial] Orlando and his team were easy to work with from quote to completion. Our basement floor is now waterproof, durable, and looks fantastic.",
+          "[Demo placeholder testimonial] The team was easy to work with from quote to completion. Our basement floor is now waterproof, durable, and looks fantastic.",
         rating: 5,
         isDemo: true,
       },

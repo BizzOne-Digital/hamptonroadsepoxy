@@ -19,12 +19,12 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Premium Epoxy Flooring in Hampton Roads, VA",
   description:
-    "Hampton Roads Epoxy installs premium metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads, Virginia. Get a free quote today.",
+    "Hampton Roads Epoxy installs premium metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads. Get a free quote today.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Hampton Roads Epoxy | Premium Epoxy Flooring",
     description:
-      "Metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads, Virginia.",
+      "Metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads.",
     url: siteConfig.url,
   },
 };
@@ -57,10 +57,6 @@ export default async function Home() {
       "@type": "City",
       name: city,
     })),
-    founder: {
-      "@type": "Person",
-      name: siteConfig.ownerName,
-    },
     sameAs: [],
   };
 
