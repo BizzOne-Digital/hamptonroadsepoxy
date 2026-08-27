@@ -25,11 +25,12 @@ export default function AdminServicesPage() {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/admin/services");
+    const res = await fetch("/api/admin/services", { cache: "no-store" });
     const data = await res.json();
     setServices(data.services ?? []);
     setLoading(false);
@@ -87,6 +88,7 @@ export default function AdminServicesPage() {
 
   async function handleSave() {
     setError("");
+    setSuccessMessage("");
     if (!form.title.trim() || !form.slug.trim()) {
       setError("Title and slug are required.");
       return;
@@ -111,12 +113,12 @@ export default function AdminServicesPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to save service");
 
-      if (editingId) {
-        setServices((prev) => prev.map((s) => (s._id === editingId ? data.service : s)));
-      } else {
-        setServices((prev) => [...prev, data.service]);
-      }
+      // Re-fetch from the server rather than trusting local state, so the
+      // list always reflects what's actually persisted in the database.
+      await load();
       setShowForm(false);
+      setSuccessMessage(`"${data.service.title}" saved successfully.`);
+      setTimeout(() => setSuccessMessage(""), 4000);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to save service");
     } finally {
@@ -146,6 +148,12 @@ export default function AdminServicesPage() {
           <Plus size={16} /> Add Service
         </button>
       </div>
+
+      {successMessage && (
+        <div className="rounded-lg border border-green-200 bg-green-50 text-green-700 px-4 py-3 text-sm font-medium">
+          {successMessage}
+        </div>
+      )}
 
       {showForm && (
         <div className="bg-white rounded-2xl border border-cream p-6 flex flex-col gap-4">

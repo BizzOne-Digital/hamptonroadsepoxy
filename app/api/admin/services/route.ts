@@ -9,7 +9,10 @@ export async function GET() {
   try {
     await connectDB();
     const services = await Service.find().sort({ order: 1 }).lean();
-    return NextResponse.json({ services });
+    return NextResponse.json(
+      { services },
+      { headers: { "Cache-Control": "no-store, must-revalidate" } }
+    );
   } catch (error) {
     console.error("Fetch services error:", error);
     return NextResponse.json({ error: "Failed to load services" }, { status: 500 });
