@@ -41,6 +41,7 @@ export default async function ServicesPage() {
         <div className="container-page py-20 sm:py-28 flex flex-col gap-16">
           {services.map((service, i) => {
             const visuals = getServiceVisuals(service.slug);
+            const heroImage = service.image?.url || visuals.heroImage;
             return (
               <Reveal key={service.slug} delay={i * 0.1}>
                 <div
@@ -50,7 +51,7 @@ export default async function ServicesPage() {
                 >
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src={visuals.heroImage}
+                      src={heroImage}
                       alt={service.title}
                       fill
                       className="object-cover"
