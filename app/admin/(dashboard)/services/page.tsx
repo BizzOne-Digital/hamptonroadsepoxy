@@ -89,6 +89,10 @@ export default function AdminServicesPage() {
   async function handleSave() {
     setError("");
     setSuccessMessage("");
+    if (uploading) {
+      setError("Please wait for the image upload to finish before saving.");
+      return;
+    }
     if (!form.title.trim() || !form.slug.trim()) {
       setError("Title and slug are required.");
       return;
@@ -227,10 +231,16 @@ export default function AdminServicesPage() {
             </div>
           </div>
 
+          {uploading && (
+            <p className="text-sm text-forest/70 flex items-center gap-2">
+              <Loader2 className="animate-spin" size={14} /> Image is still uploading — please wait before saving.
+            </p>
+          )}
           {error && <p className="text-sm text-red-600">{error}</p>}
           <button
             onClick={handleSave}
-            disabled={saving}
+            disabled={saving || uploading}
+            title={uploading ? "Wait for the image upload to finish first" : undefined}
             className="self-start inline-flex items-center gap-2 rounded-full bg-gold text-white px-6 py-2.5 text-sm font-semibold hover:bg-[#255cc4] disabled:opacity-60"
           >
             {saving && <Loader2 className="animate-spin" size={16} />}
