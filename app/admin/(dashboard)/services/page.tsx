@@ -65,6 +65,7 @@ export default function AdminServicesPage() {
 
   async function handleImageUpload() {
     setError("");
+    setSuccessMessage("");
     const file = fileRef.current?.files?.[0];
     if (!file) {
       setError("Please choose an image first.");
@@ -77,8 +78,25 @@ export default function AdminServicesPage() {
       const uploadRes = await fetch("/api/admin/upload", { method: "POST", body: formData });
       const uploadData = await uploadRes.json();
       if (!uploadRes.ok) throw new Error(uploadData.error || "Upload failed");
-      setForm((f) => ({ ...f, image: { url: uploadData.imageUrl, publicId: uploadData.publicId } }));
+      const image = { url: uploadData.imageUrl, publicId: uploadData.publicId };
+      setForm((f) => ({ ...f, image }));
       if (fileRef.current) fileRef.current.value = "";
+
+      // For an existing service, save the image straight to the database
+      // right away (same one-step pattern as the Gallery uploader) instead
+      // of waiting on a separate "Save Changes" click.
+      if (editingId) {
+        const saveRes = await fetch(`/api/admin/services/${editingId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ image }),
+        });
+        const saveData = await saveRes.json();
+        if (!saveRes.ok) throw new Error(saveData.error || "Image uploaded but failed to save to the service");
+        setServices((prev) => prev.map((s) => (s._id === editingId ? saveData.service : s)));
+        setSuccessMessage("Image saved.");
+        setTimeout(() => setSuccessMessage(""), 4000);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -227,6 +245,11 @@ export default function AdminServicesPage() {
                   {uploading ? <Loader2 className="animate-spin" size={14} /> : <Upload size={14} />}
                   {uploading ? "Uploading..." : form.image?.url ? "Replace Image" : "Upload Image"}
                 </button>
+                {editingId && (
+                  <p className="text-xs text-charcoal/50">
+                    Saves to this service automatically once uploaded.
+                  </p>
+                )}
               </div>
             </div>
           </div>
