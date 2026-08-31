@@ -47,18 +47,18 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent" />
       </div>
 
-      <div className="container-page relative py-12 sm:py-32 lg:py-36">
+      <div className="container-page relative py-24 sm:py-32 lg:py-36">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold bg-ivory/10 px-4 py-2 rounded-full">
-            <ShieldCheck size={14} /> Serving All of {siteConfig.serviceArea}
+          <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-gold bg-ivory/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
+            <ShieldCheck size={13} /> Serving All of {siteConfig.serviceArea}
           </span>
 
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.1] mt-4 sm:mt-6">
+          <h1 className="font-heading text-2xl sm:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.1] mt-3 sm:mt-6">
             Flooring That Turns Your Space Into a Statement
           </h1>
 
@@ -67,11 +67,11 @@ export default function Hero() {
             epoxy flooring for garages, homes, and businesses — built to
             impress and engineered to last.
           </p>
-          <p className="sm:hidden text-ivory/80 text-base mt-3 max-w-xl leading-relaxed">
+          <p className="sm:hidden text-ivory/80 text-sm mt-2 max-w-xl leading-relaxed">
             Premium metallic, quartz &amp; epoxy flooring — built to impress.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 mt-6 sm:mt-9">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 sm:mt-9">
             <LinkButton href="/booking" variant="primary">
               Get a Free Quote <ArrowRight size={16} />
             </LinkButton>
