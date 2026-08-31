@@ -15,8 +15,17 @@ export default function Hero() {
           alt="Luxury garage with a glossy metallic epoxy floor"
           fill
           priority
-          className="object-cover"
+          className="hidden sm:block object-cover"
           sizes="100vw"
+        />
+        <video
+          className="sm:hidden absolute inset-0 w-full h-full object-cover"
+          src="/hero-mobile.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero.png"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent" />
