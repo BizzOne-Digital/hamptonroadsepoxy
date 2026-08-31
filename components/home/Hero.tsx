@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent" />
       </div>
 
-      <div className="container-page relative py-24 sm:py-32 lg:py-36">
+      <div className="container-page relative py-32 sm:py-32 lg:py-36 min-h-[85vh] sm:min-h-0 flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
