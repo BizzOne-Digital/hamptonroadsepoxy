@@ -23,31 +23,31 @@ const DEFAULT_VISUALS: ServiceVisuals = {
 export const serviceVisuals: Record<string, ServiceVisuals> = {
   "metallic-epoxy-flooring": {
     heroImage:
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1600&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788228737/hampton-roads-epoxy/i8nbs5apdfjrkdcunckf.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788228737/hampton-roads-epoxy/i8nbs5apdfjrkdcunckf.webp",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/zrzdqk4cym7t6mfr6xfk.jpg",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/th9vgbjocsbkoylvd1pf.jpg",
     ],
     idealFor: ["Luxury garages", "Showrooms & retail floors", "Basements & living spaces", "Restaurants & lobbies"],
   },
   "quartz-epoxy-flooring": {
     heroImage:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788222211/hampton-roads-epoxy/gp2ljc9rkmlypira1shn.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1604709177595-ee9c2580e9c8?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1565193298357-c5b46d47f1e6?auto=format&fit=crop&w=900&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788222211/hampton-roads-epoxy/gp2ljc9rkmlypira1shn.jpg",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/khzguz6o42z4xhxfdpj2.jpg",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/ydo3bd2ffuezu2hxkygm.jpg",
     ],
     idealFor: ["Garages & driveways", "Pool decks & patios", "Commercial entryways", "Basements"],
   },
   "epoxy-flooring": {
     heroImage:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788221942/hampton-roads-epoxy/shhgwcvomm01ctak5erw.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788221942/hampton-roads-epoxy/shhgwcvomm01ctak5erw.jpg",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/hjmjy2osnezly0ln2wc0.jpg",
+      "https://res.cloudinary.com/difmil8wj/image/upload/v1788305534/hampton-roads-epoxy/gallery/xzdit274lwk53s6rifpp.jpg",
     ],
     idealFor: [
       "Patios",
