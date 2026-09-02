@@ -52,8 +52,8 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/new/metallic2.jpg"
-                alt="Finished metallic epoxy flooring in a residential space"
+                src="/new/about.png"
+                alt="Hampton Roads Epoxy technician applying a metallic epoxy floor coating"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
