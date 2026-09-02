@@ -52,8 +52,8 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/about.png"
-                alt="Epoxy flooring contractor working on a concrete garage floor"
+                src="/new/metallic2.jpg"
+                alt="Finished metallic epoxy flooring in a residential space"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -107,8 +107,8 @@ export default function AboutPage() {
           <Reveal delay={0.1}>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/img1.png"
-                alt="Professionally prepared concrete surface ready for epoxy coating"
+                src="/new/quarttz1.jpg"
+                alt="Close-up of a professionally finished quartz epoxy floor surface"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -142,8 +142,8 @@ export default function AboutPage() {
           <Reveal delay={0.1} className="lg:order-1">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/img2.png"
-                alt="Finished commercial epoxy flooring installation"
+                src="/new/expoxy3-final.jpg"
+                alt="Finished flake epoxy garage floor installation"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
