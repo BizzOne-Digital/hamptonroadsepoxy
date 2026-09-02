@@ -20,17 +20,17 @@ export default function ServicesGrid({ services }: { services: ServiceDTO[] }) {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14 items-stretch">
           {services.map((service, i) => {
             const visuals = getServiceVisuals(service.slug);
             const heroImage = service.image?.url || visuals.heroImage;
             return (
-              <Reveal key={service.slug} delay={i * 0.1}>
+              <Reveal key={service.slug} delay={i * 0.1} className="h-full">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  className="group flex h-full flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden shrink-0">
                     <Image
                       src={heroImage}
                       alt={service.title}
@@ -39,12 +39,12 @@ export default function ServicesGrid({ services }: { services: ServiceDTO[] }) {
                       sizes="(max-width: 1024px) 100vw, 33vw"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center justify-between gap-2">
                       <h3 className="font-heading text-xl text-forest">{service.title}</h3>
                       <ArrowUpRight className="text-gold shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />
                     </div>
-                    <p className="text-charcoal/70 mt-2 text-sm leading-relaxed">{service.shortDescription}</p>
+                    <p className="text-charcoal/70 mt-2 text-sm leading-relaxed line-clamp-2">{service.shortDescription}</p>
                   </div>
                 </Link>
               </Reveal>

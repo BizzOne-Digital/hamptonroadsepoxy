@@ -18,8 +18,8 @@ export default function AboutPreview() {
         <Reveal>
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/about.png"
-              alt="Contractor finishing a quartz epoxy floor"
+              src="/new/about.png"
+              alt="Hampton Roads Epoxy technician applying a metallic epoxy floor coating"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
