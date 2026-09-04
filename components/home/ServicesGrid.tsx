@@ -38,6 +38,11 @@ export default function ServicesGrid({ services }: { services: ServiceDTO[] }) {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 1024px) 100vw, 33vw"
                     />
+                    {service.slug === "epoxy-flooring" && (
+                      <span className="absolute top-3 left-3 bg-forest/85 text-ivory text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                        Flake
+                      </span>
+                    )}
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center justify-between gap-2">

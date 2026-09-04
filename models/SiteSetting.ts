@@ -12,7 +12,7 @@ export interface ISiteSetting extends mongoose.Document {
 
 const SiteSettingSchema = new Schema<ISiteSetting>({
   phone: { type: String, required: true, default: "757-718-0117" },
-  email: { type: String, required: true, default: "orlandospain@gmail.com" },
+  email: { type: String, required: true, default: "hamptonroadsepoxy@gmail.com" },
   address: { type: String, required: true, default: "Hampton Roads" },
   businessName: { type: String, required: true, default: "Hampton Roads Epoxy" },
   ownerName: { type: String, required: true, default: "Orlando Navarrete" },

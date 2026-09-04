@@ -35,7 +35,7 @@ async function seed() {
   if (!existingSettings) {
     await SiteSetting.create({
       phone: "757-718-0117",
-      email: "orlandospain@gmail.com",
+      email: "hamptonroadsepoxy@gmail.com",
       address: "Hampton Roads",
       businessName: "Hampton Roads Epoxy",
       ownerName: "Orlando Navarrete",

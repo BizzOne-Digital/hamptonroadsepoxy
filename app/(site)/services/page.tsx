@@ -57,6 +57,11 @@ export default async function ServicesPage() {
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
+                    {service.slug === "epoxy-flooring" && (
+                      <span className="absolute top-3 left-3 bg-forest/85 text-ivory text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                        Flake
+                      </span>
+                    )}
                   </div>
                   <div>
                     <h2 className="font-heading text-3xl text-forest">{service.title}</h2>
