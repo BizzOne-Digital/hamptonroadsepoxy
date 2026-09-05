@@ -93,7 +93,7 @@ export default function BookingForm() {
           <option value="" disabled>Select a service</option>
           <option value="Metallic Epoxy Flooring">Metallic Epoxy Flooring</option>
           <option value="Quartz Epoxy Flooring">Quartz Epoxy Flooring</option>
-          <option value="Epoxy Flooring">Epoxy Flooring</option>
+          <option value="Epoxy Flake Flooring">Epoxy Flake Flooring</option>
           <option value="Not Sure Yet">Not Sure Yet</option>
         </select>
       </div>

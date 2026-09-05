@@ -81,7 +81,7 @@ async function seed() {
       order: 2,
     },
     {
-      title: "Epoxy Flooring",
+      title: "Epoxy Flake Flooring",
       slug: "epoxy-flooring",
       shortDescription:
         "Our classic solid-color and flake epoxy systems — a dependable, budget-conscious upgrade for any concrete floor.",

@@ -63,12 +63,12 @@ export default function Hero() {
           </h1>
 
           <p className="hidden sm:block text-ivory/80 text-lg mt-6 max-w-xl leading-relaxed">
-            Hampton Roads Epoxy installs premium metallic, quartz, and classic
+            Hampton Roads Epoxy installs premium metallic, quartz, and flake
             epoxy flooring for garages, homes, and businesses — built to
             impress and engineered to last.
           </p>
           <p className="sm:hidden text-ivory/80 text-sm mt-2 max-w-xl leading-relaxed">
-            Premium metallic, quartz &amp; epoxy flooring — built to impress.
+            Premium metallic, quartz &amp; flake epoxy flooring — built to impress.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 sm:mt-9">

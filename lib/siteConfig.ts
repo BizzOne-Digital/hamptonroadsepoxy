@@ -40,7 +40,7 @@ export const siteConfig = {
     },
     {
       slug: "epoxy-flooring",
-      title: "Epoxy Flooring",
+      title: "Epoxy Flake Flooring",
       shortDescription:
         "Our classic solid-color and flake epoxy systems — a dependable upgrade for any concrete floor.",
     },
