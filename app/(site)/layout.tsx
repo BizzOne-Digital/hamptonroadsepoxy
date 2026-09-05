@@ -1,12 +1,23 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { getSiteSettings } from "@/lib/getSiteSettings";
 
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
+export const dynamic = "force-dynamic";
+
+export default async function SiteLayout({ children }: { children: React.ReactNode }) {
+  const settings = await getSiteSettings();
+
   return (
     <>
-      <Header />
+      <Header phone={settings.phone} phoneHref={settings.phoneHref} />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer
+        phone={settings.phone}
+        phoneHref={settings.phoneHref}
+        email={settings.email}
+        emailHref={settings.emailHref}
+        address={settings.address}
+      />
     </>
   );
 }

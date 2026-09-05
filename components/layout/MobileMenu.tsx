@@ -8,9 +8,11 @@ import { siteConfig } from "@/lib/siteConfig";
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
+  phone: string;
+  phoneHref: string;
 }
 
-export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+export default function MobileMenu({ open, onClose, phone, phoneHref }: MobileMenuProps) {
   return (
     <AnimatePresence>
       {open && (
@@ -56,11 +58,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </nav>
             <div className="mt-auto px-6 py-8 border-t border-cream flex flex-col gap-4">
               <a
-                href={siteConfig.phoneHref}
+                href={phoneHref}
                 className="flex items-center gap-2 text-base font-semibold text-forest"
               >
                 <Phone size={18} />
-                {siteConfig.phone}
+                {phone}
               </a>
               <Link
                 href="/booking"

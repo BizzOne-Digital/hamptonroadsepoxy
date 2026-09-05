@@ -5,9 +5,14 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
 import { LinkButton } from "@/components/ui/Button";
-import { siteConfig } from "@/lib/siteConfig";
 
-export default function Hero() {
+interface HeroProps {
+  phone: string;
+  phoneHref: string;
+  serviceArea: string;
+}
+
+export default function Hero({ phone, phoneHref, serviceArea }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -55,7 +60,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-gold bg-ivory/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
-            <ShieldCheck size={13} /> Serving All of {siteConfig.serviceArea}
+            <ShieldCheck size={13} /> Serving All of {serviceArea}
           </span>
 
           <h1 className="font-heading text-2xl sm:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.1] mt-3 sm:mt-6">
@@ -76,10 +81,10 @@ export default function Hero() {
               Get a Free Quote <ArrowRight size={16} />
             </LinkButton>
             <a
-              href={siteConfig.phoneHref}
+              href={phoneHref}
               className="inline-flex items-center gap-2 text-ivory font-semibold hover:text-gold transition-colors"
             >
-              <Phone size={18} /> {siteConfig.phone}
+              <Phone size={18} /> {phone}
             </a>
           </div>
         </motion.div>

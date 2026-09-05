@@ -3,11 +3,12 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { LinkButton } from "@/components/ui/Button";
-import { siteConfig } from "@/lib/siteConfig";
 import { getServiceVisuals } from "@/lib/serviceVisuals";
+import { getSiteSettings } from "@/lib/getSiteSettings";
 import type { ServiceDTO } from "@/types";
 
-export default function ServiceDetail({ service }: { service: ServiceDTO }) {
+export default async function ServiceDetail({ service }: { service: ServiceDTO }) {
+  const settings = await getSiteSettings();
   const visuals = getServiceVisuals(service.slug);
   const heroImage = service.image?.url || visuals.heroImage;
   const descriptionParagraphs = service.description
@@ -23,13 +24,13 @@ export default function ServiceDetail({ service }: { service: ServiceDTO }) {
     description: service.shortDescription,
     provider: {
       "@type": "LocalBusiness",
-      name: siteConfig.businessName,
-      telephone: siteConfig.phone,
-      email: siteConfig.email,
+      name: settings.businessName,
+      telephone: settings.phone,
+      email: settings.email,
     },
     areaServed: {
       "@type": "Place",
-      name: siteConfig.serviceArea,
+      name: settings.address,
     },
   };
 
@@ -113,10 +114,10 @@ export default function ServiceDetail({ service }: { service: ServiceDTO }) {
                   Book a Consultation
                 </LinkButton>
                 <a
-                  href={siteConfig.phoneHref}
+                  href={settings.phoneHref}
                   className="text-center text-sm font-semibold text-forest hover:text-gold"
                 >
-                  Or call {siteConfig.phone}
+                  Or call {settings.phone}
                 </a>
               </div>
             </div>

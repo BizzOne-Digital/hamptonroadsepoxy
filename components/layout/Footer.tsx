@@ -2,7 +2,15 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/siteConfig";
 
-export default function Footer() {
+interface FooterProps {
+  phone: string;
+  phoneHref: string;
+  email: string;
+  emailHref: string;
+  address: string;
+}
+
+export default function Footer({ phone, phoneHref, email, emailHref, address }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -14,17 +22,17 @@ export default function Footer() {
           </h3>
           <p className="text-ivory/70 max-w-sm leading-relaxed">
             Premium metallic, quartz, and classic epoxy flooring for garages,
-            homes, and businesses across {siteConfig.serviceArea}.
+            homes, and businesses across {address}.
           </p>
           <div className="flex flex-col gap-3 mt-6">
-            <a href={siteConfig.phoneHref} className="flex items-center gap-2 text-ivory/90 hover:text-gold">
-              <Phone size={16} /> {siteConfig.phone}
+            <a href={phoneHref} className="flex items-center gap-2 text-ivory/90 hover:text-gold">
+              <Phone size={16} /> {phone}
             </a>
-            <a href={siteConfig.emailHref} className="flex items-center gap-2 text-ivory/90 hover:text-gold">
-              <Mail size={16} /> {siteConfig.email}
+            <a href={emailHref} className="flex items-center gap-2 text-ivory/90 hover:text-gold">
+              <Mail size={16} /> {email}
             </a>
             <span className="flex items-center gap-2 text-ivory/90">
-              <MapPin size={16} /> Serving {siteConfig.serviceArea}
+              <MapPin size={16} /> Serving {address}
             </span>
           </div>
         </div>

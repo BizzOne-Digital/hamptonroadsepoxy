@@ -13,6 +13,7 @@ import LeadCTA from "@/components/home/LeadCTA";
 import { siteConfig } from "@/lib/siteConfig";
 import { getAllServices } from "@/lib/services";
 import { getAllGalleryItems } from "@/lib/gallery";
+import { getSiteSettings } from "@/lib/getSiteSettings";
 
 export const dynamic = "force-dynamic";
 
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const services = await getAllServices();
   const galleryItems = await getAllGalleryItems();
+  const settings = await getSiteSettings();
   const galleryImages = galleryItems.slice(0, 6).map((item) => ({
     src: item.imageUrl,
     alt: item.title,
@@ -41,16 +43,16 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteConfig.url}/#business`,
-    name: siteConfig.businessName,
+    name: settings.businessName,
     image: `${siteConfig.url}/og-image.jpg`,
     url: siteConfig.url,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
+    telephone: settings.phone,
+    email: settings.email,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       addressRegion: "VA",
-      addressLocality: "Hampton Roads",
+      addressLocality: settings.address,
       addressCountry: "US",
     },
     areaServed: siteConfig.serviceAreaCities.map((city) => ({
@@ -66,7 +68,7 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Hero />
+      <Hero phone={settings.phone} phoneHref={settings.phoneHref} serviceArea={settings.address} />
       <TrustBar />
       <AboutPreview />
       <ServicesGrid services={services} />

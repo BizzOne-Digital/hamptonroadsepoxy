@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import ContactForm from "@/components/forms/ContactForm";
-import { siteConfig } from "@/lib/siteConfig";
+import { getSiteSettings } from "@/lib/getSiteSettings";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -11,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
   return (
     <section className="bg-ivory">
       <div className="container-page py-20 sm:py-28 grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -27,23 +30,23 @@ export default function ContactPage() {
             </p>
 
             <div className="flex flex-col gap-5 mt-10">
-              <a href={siteConfig.phoneHref} className="flex items-center gap-3 text-forest font-semibold hover:text-gold">
+              <a href={settings.phoneHref} className="flex items-center gap-3 text-forest font-semibold hover:text-gold">
                 <span className="w-11 h-11 rounded-full bg-cream flex items-center justify-center shrink-0">
                   <Phone size={18} />
                 </span>
-                {siteConfig.phone}
+                {settings.phone}
               </a>
-              <a href={siteConfig.emailHref} className="flex items-center gap-3 text-forest font-semibold hover:text-gold">
+              <a href={settings.emailHref} className="flex items-center gap-3 text-forest font-semibold hover:text-gold">
                 <span className="w-11 h-11 rounded-full bg-cream flex items-center justify-center shrink-0">
                   <Mail size={18} />
                 </span>
-                {siteConfig.email}
+                {settings.email}
               </a>
               <div className="flex items-center gap-3 text-forest font-semibold">
                 <span className="w-11 h-11 rounded-full bg-cream flex items-center justify-center shrink-0">
                   <MapPin size={18} />
                 </span>
-                Serving {siteConfig.serviceArea}
+                Serving {settings.address}
               </div>
             </div>
           </Reveal>

@@ -4,7 +4,9 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { LinkButton } from "@/components/ui/Button";
-import { siteConfig } from "@/lib/siteConfig";
+import { getSiteSettings } from "@/lib/getSiteSettings";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -28,7 +30,8 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const settings = await getSiteSettings();
   return (
     <>
       <section className="bg-forest text-ivory">
@@ -68,7 +71,7 @@ export default function AboutPage() {
               performs even better. What started as a passion for
               craftsmanship has grown into a trusted local flooring company
               serving garages, basements, showrooms, and commercial spaces
-              throughout {siteConfig.serviceArea}.
+              throughout {settings.address}.
             </p>
             <p className="text-charcoal/75 text-lg mt-4 leading-relaxed">
               Every project is personally overseen to make sure it meets our

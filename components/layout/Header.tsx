@@ -7,7 +7,12 @@ import { Phone } from "lucide-react";
 import { siteConfig } from "@/lib/siteConfig";
 import MobileMenu from "./MobileMenu";
 
-export default function Header() {
+interface HeaderProps {
+  phone: string;
+  phoneHref: string;
+}
+
+export default function Header({ phone, phoneHref }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -38,11 +43,11 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <a
-            href={siteConfig.phoneHref}
+            href={phoneHref}
             className="flex items-center gap-2 text-sm font-semibold text-forest hover:text-gold transition-colors"
           >
             <Phone size={16} />
-            {siteConfig.phone}
+            {phone}
           </a>
           <Link
             href="/booking"
@@ -63,7 +68,7 @@ export default function Header() {
         </button>
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} phone={phone} phoneHref={phoneHref} />
     </header>
   );
 }
