@@ -30,10 +30,10 @@ export async function POST(request: NextRequest) {
     await connectDB();
     const booking = await Booking.create({ ...parsed.data, status: "pending" });
 
-    try {
-      const adminEmail = process.env.ADMIN_EMAIL;
-      if (adminEmail) {
-        await sendMail({
+    const adminEmail = process.env.ADMIN_EMAIL;
+    if (adminEmail) {
+      await sendMail(
+        {
           to: adminEmail,
           subject: `New Consultation Booking: ${parsed.data.name}`,
           html: adminNotificationEmail({
@@ -48,9 +48,12 @@ export async function POST(request: NextRequest) {
               { label: "Notes", value: parsed.data.notes || "—" },
             ],
           }),
-        });
-      }
-      await sendMail({
+        },
+        "booking admin notification"
+      );
+    }
+    await sendMail(
+      {
         to: parsed.data.email,
         subject: "Your consultation request — Hampton Roads Epoxy",
         html: customerConfirmationEmail({
@@ -58,10 +61,9 @@ export async function POST(request: NextRequest) {
           intro:
             "Thanks for booking a consultation with us. We've received your requested date and will confirm shortly.",
         }),
-      });
-    } catch (emailError) {
-      console.error("Booking email send failed:", emailError);
-    }
+      },
+      "booking customer confirmation"
+    );
 
     return NextResponse.json({ success: true, id: booking.id }, { status: 201 });
   } catch (error) {

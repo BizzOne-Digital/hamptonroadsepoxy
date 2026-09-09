@@ -24,19 +24,26 @@ interface MailOptions {
   html: string;
 }
 
-export async function sendMail({ to, subject, html }: MailOptions): Promise<void> {
+export async function sendMail({ to, subject, html }: MailOptions, label = "Email"): Promise<boolean> {
   const transporter = getTransporter();
   if (!transporter) {
-    console.warn("SMTP not configured; skipping email send.");
-    return;
+    console.warn(`[mailer] SMTP not configured; skipping ${label} to ${to}.`);
+    return false;
   }
 
-  await transporter.sendMail({
-    from: `"Hampton Roads Epoxy" <${process.env.SMTP_USER}>`,
-    to,
-    subject,
-    html,
-  });
+  try {
+    const info = await transporter.sendMail({
+      from: `"Hampton Roads Epoxy" <${process.env.SMTP_USER}>`,
+      to,
+      subject,
+      html,
+    });
+    console.log(`[mailer] SENT — ${label} to ${to} (messageId: ${info.messageId})`);
+    return true;
+  } catch (error) {
+    console.error(`[mailer] FAILED — ${label} to ${to}:`, error instanceof Error ? error.message : error);
+    return false;
+  }
 }
 
 export function adminNotificationEmail(opts: {

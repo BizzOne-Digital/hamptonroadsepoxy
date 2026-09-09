@@ -30,10 +30,10 @@ export async function POST(request: NextRequest) {
     await connectDB();
     const lead = await Lead.create({ ...parsed.data, status: "new" });
 
-    try {
-      const adminEmail = process.env.ADMIN_EMAIL;
-      if (adminEmail) {
-        await sendMail({
+    const adminEmail = process.env.ADMIN_EMAIL;
+    if (adminEmail) {
+      await sendMail(
+        {
           to: adminEmail,
           subject: `New Website Lead: ${parsed.data.name}`,
           html: adminNotificationEmail({
@@ -46,9 +46,12 @@ export async function POST(request: NextRequest) {
               { label: "Message", value: parsed.data.message },
             ],
           }),
-        });
-      }
-      await sendMail({
+        },
+        "contact admin notification"
+      );
+    }
+    await sendMail(
+      {
         to: parsed.data.email,
         subject: "We received your request — Hampton Roads Epoxy",
         html: customerConfirmationEmail({
@@ -56,10 +59,9 @@ export async function POST(request: NextRequest) {
           intro:
             "Thanks for reaching out about your epoxy flooring project. Your message has been received.",
         }),
-      });
-    } catch (emailError) {
-      console.error("Contact email send failed:", emailError);
-    }
+      },
+      "contact customer confirmation"
+    );
 
     return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
   } catch (error) {
