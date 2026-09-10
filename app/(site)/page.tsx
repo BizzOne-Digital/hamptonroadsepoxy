@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     description:
       "Metallic, quartz, and classic epoxy flooring for garages, homes, and businesses across Hampton Roads.",
     url: siteConfig.url,
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 
