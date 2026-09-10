@@ -17,7 +17,10 @@ export default function ContactForm() {
     setStatus("loading");
     setError("");
 
-    const formData = new FormData(e.currentTarget);
+    // Capture the form element now — React nulls out e.currentTarget once
+    // this handler yields at the first `await`, so it can't be read later.
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -37,7 +40,7 @@ export default function ContactForm() {
         throw new Error(data.error || "Something went wrong");
       }
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong");
