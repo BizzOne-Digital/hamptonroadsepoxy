@@ -22,10 +22,10 @@ export default function Header({ phone, phoneHref }: HeaderProps) {
           <Image
             src="/logo.png"
             alt="Hampton Roads Epoxy"
-            width={160}
-            height={64}
+            width={220}
+            height={88}
             priority
-            className="h-12 sm:h-14 w-auto object-contain"
+            className="h-16 sm:h-[4.5rem] w-auto object-contain"
           />
         </Link>
 
